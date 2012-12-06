@@ -213,7 +213,7 @@ for ARITY will give a regexp matching any arity."
   (when (edts-node-started-p "edts")
     (error "EDTS: Server already running"))
   (with-temp-buffer
-    (cd (concat edts-lib-directory "/.."))
+    (cd (concat edts-lib-directory ".."))
     (make-comint "edts" "./start.sh" nil edts-data-directory edts-erl-command)
     (set-process-query-on-exit-flag (get-buffer-process "*edts*") nil)))
 
